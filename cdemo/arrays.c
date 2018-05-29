@@ -11,14 +11,14 @@ for (i = 0; i <100; i++)
   arr[i] = i*i;
 }
 int* arrPtr = &arr[0];
-arrayAdd(arrPtr, s, n);
 printf("Enter the amount to increment each element:");
-scanf("%d\n", &n);
-for (i = 0; i <100; i++);
+scanf("%d", &n);
+s = sizeof(arr)/4;
+arrayAdd(arrPtr, s, n);
+for (i = 0; i <100; i++)
 {
-  printf("d%\n", *arrPtr++);
+  printf("%d\n", *arrPtr++ );
 }
-
 }
 
 
@@ -29,10 +29,10 @@ void arrayAdd(int *arrPtr, int s, int n)
 // arr is pointer for array
 {
   int i;
-  for (i = 0; i < s; i++);
-{
-  *arrPtr = *arrPtr + n;
-  arrPtr++;
-  //changes pointer to next index
-}
+  for (i = 0; i < s; i++)
+  {
+    *arrPtr = *arrPtr + n;
+    arrPtr++;
+    //changes pointer to next index
+  }
 }
