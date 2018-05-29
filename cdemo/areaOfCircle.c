@@ -5,7 +5,7 @@ int main()
   float radius;
   float area;
   printf("Enter Radius:");
-  scanf("%f\n", &radius);
+  scanf("%f", &radius);
   area = areaOfCircle(radius);
   printf("Area=%f\n", area);
 }
