@@ -9,7 +9,7 @@ for (i = 0; i <100; i++)
 }
 int* arrPtr = &arr[0]
 printf("Enter the amount to increment each element:")
-scanf("%d\n", n)
+scanf("%d\n", &n)
 int arrayadd;
 for (i = 0; i <100; i++)
 {
