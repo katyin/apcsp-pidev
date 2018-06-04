@@ -1,41 +1,77 @@
 #include <stdio.h>
 float areaOfCircle (float radius);
-int main()
+int main(int argc, char* argv[])
 {
-  float radius[256];
+  float radius;
   float area;
+  int arg1;
+  int arg2;
+  int found;
+
+  float areaOfCircle(float r)
+    {
+      return 3.14*r*r;
+    }
+  
+  if (argc != 3)
+    {
+       int arg1;
+       int found = sscanf(argv[1], "%d", &arg1);
+       if (found != 1)
+         {
+           printf("first arg is not an integer\n");
+         }
+    }
+  else 
+    {
+      printf("First arg is an integer\n");
+      return 1;
+    }
+
+  //int arg2;
+  found = sscanf(argv[2], "%d", &arg2);
+  if (found != 1)
+    {
+      printf("Second arg is not an integer\n");
+    }
+  else 
+    {
+      printf("Second arg is an integer\n");
+      return 1;
+    }
+
+  printf("Your radius range is %d to %d\n", arg1, arg2);
+ //float radius;
+  for (int i = arg1; i <= arg2; i++)
+     {
+       radius = areaOfCircle(i);
+       printf("Radius = %d Area = %f\n", i, radius);
+     }
+}
+else {
+  printf("Please enter two integers\n");
   char input1[256];
   char input2[256];
-  int age;
-  
-  printf("Enter a range for the radius?\n");
+  int num1;
+  int num2;
+  float radius;
+
   fgets(input1, 256, stdin);
-  sscanf(input1, "%s", radius);
+  if(sscanf(input1, "%d",&num1)!= 1);
+      {
+        printf("Not a valid integer - try again\n");
+        return 1;
+      }
   fgets(input2, 256, stdin);
-  sscanf(input2, "%s", radius);
+  if(sscanf(input2, "%d",&num2)!= 1);
+      {
+        printf("Not a valid integer - try again\n");
+        return 1;
+      }
 
-  printf("%s, %s\n", radius);
-  while (1)
-  {
-    fgets(input, 256, stdin);
-    if (sscanf(input, "%d", &age) == 1) break;
-    printf("Not a valid age - try again!\n");
-  }
-  
-  printf("Hi %s, you look young for %d…\n", name, age);
-  printf("Enter Radius:");
-  scanf("%f", &radius);
-  area = areaOfCircle(radius);
-  printf("Area=%f\n", area);
-}
-
-float areaOfCircle(float radius)
-{//calculating for area//
-for (radius = 3.5; radius <= 12.5; radius++)
-{
-	float area;
-	area = 3.14*radius*radius;
-	return (area);
-}
-
+  for (int i = num1; i <= num2; i++)
+      {
+        radius = areaOfCircle(i);
+        printf("Radius = %d Area = %f\n", i, radius);
+      }
 }
