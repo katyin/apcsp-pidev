@@ -17,4 +17,8 @@ float area;
 area = 3.14*radius*radius;
 return (area);
 }
-
+    for (float i = 3.5; i < 12.6; i ++)
+{
+  printf("Radius = %d Area = %f\n", areaOfCircle(i));
+}
+}
