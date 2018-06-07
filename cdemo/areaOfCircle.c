@@ -4,10 +4,11 @@ int main()
 {
   float radius;
   float area;
-  printf("Enter Radius:");
-  scanf("%f", &radius);
-  area = areaOfCircle(radius);
-  printf("Area=%f\n", area);
+    for (float radius = 3.5; radius < 12.6; radius++)
+  {
+    area = areaOfCircle(radius);
+printf("Radius=%f Area = %f\n", radius, area);
+}
 }
 
 float areaOfCircle(float radius)
@@ -16,9 +17,4 @@ float areaOfCircle(float radius)
 float area;
 area = 3.14*radius*radius;
 return (area);
-}
-    for (float i = 3.5; i < 12.6; i ++)
-{
-  printf("Radius = %d Area = %f\n", areaOfCircle(i));
-}
 }
