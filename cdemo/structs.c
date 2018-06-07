@@ -36,19 +36,23 @@ int main()
           printf("Student ID: \n");
           fgets(input, 256, stdin);
           sscanf(input, "%s", stdntstruct[index].studentid);
-          
+          printf("Here are the inputs:\n First Name:%s\n Last Name:\n Age:%s\n Student ID:%s\n", stdntstruct[index].firstname, stdntstruct[index].lastname, stdntstruct[index].age, stdntstruct[index].studentid);
           printf("Would you like to enter another student's information? y/n\n");
           fgets(input, 256, stdin);
           sscanf(input, "%s", a);
 
           index++;
         }
+        
 
-        void printstdnt(struct student stdntstruct[500], int num)
-        {
-          for (int i = 1; i < num; i ++)
-          printf("Student %d:\n First name: %s\n Last name: %s\n Age: %s\n Student id %s\n", i, stdntstruct[i].firstname, stdntstruct[i].lastname, stdtstruct[i].age, stdtstruct[i].studentid);
-        }
-    }
-  printstdnt(stdntstruct, index);
+
+void printStudents(struct Student stdntstruct[50], int studentnum)
+{
+  for (int i=1; i<studentnum; i++)
+  {
+    printf("Student %d:\nFirst name: %s\nlast name: %s\nage: %s\nstudent id: %s\n", i, stdntstruct[i].firstname, stdntstruct[i].lastname, stdntstruct[i].age, stdntstruct[i].studentid);
+  }
+}
+
+printStudents(stdntstruct, index);
 }
