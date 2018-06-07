@@ -7,4 +7,4 @@ struct Student
           char age[50];
           int studentid[100];
         };
-void printStudents(struct Student stdntstruct[50], int studentnum);
+void printStudents(struct Student stdntstruct[50], int num);
